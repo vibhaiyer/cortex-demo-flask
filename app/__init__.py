@@ -29,7 +29,7 @@ def create_app():
         if "category" not in request.args:
             return jsonify(ITEMS)
         category = request.args["category"]
-        return jsonify([i for i in ITEMS if i["tags"] == category])
+        return jsonify([i for i in ITEMS if i["category"] == category])
 
     @app.get("/crash")
     def crash():
